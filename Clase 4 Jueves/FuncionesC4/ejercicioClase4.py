@@ -12,8 +12,11 @@
 
 
 def sumarDosEnteros(x,y) -> int: # -> int = es para decirme el tipo de retorno que va a tener
-    return x + y
+    return x + y # Puedo usar este numero!
 
 
 suma = sumarDosEnteros(4,5)
 print(suma)
+
+
+print(suma + 5) # Esto para mostrar que puedo reutilizar lo que me retorna la funcion.
