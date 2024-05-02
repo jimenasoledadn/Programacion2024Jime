@@ -4,7 +4,7 @@ def compararEnteros(a:int, b:int)->int:
     """Compara dos numeros enteros
 
     Args:
-        a (int): primero numero a comprar
+        a (int): primer numero a comprar
         b (int): segundo numero a comparar
 
     Returns:
@@ -31,9 +31,11 @@ def compararEnteros(a:int, b:int)->int:
 
 
 # implementar la funcion y escribir un programa que la testee
-#--------------------------------------------------
+
 # (se puede testear la funcion en solo una linea de codigo por ejemplo)
 # Puedo utilizar varios return (o sea en cada comparacion) o asignar un valor, y retornar ese valor
+
+#--------------------------------------------------
 
 
 primerNumero = int(input("Ingrese el primer numero a comprar: "))

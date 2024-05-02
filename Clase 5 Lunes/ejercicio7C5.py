@@ -32,6 +32,12 @@ print(in_interval(3,2,5))
 print(in_interval(3,1,5))
 print(in_interval(3,4,9))
 print(in_interval(5,80,20))
+print("------------")
+print(in_interval(1,2,3))
+print(in_interval(2,1,3))
+print(in_interval(3,2,1))
+print(in_interval(1,3,2))
+print(in_interval(2,3,1))
 
 #--------------------------------------------------
 

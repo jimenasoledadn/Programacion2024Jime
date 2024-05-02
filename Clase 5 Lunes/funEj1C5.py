@@ -12,14 +12,14 @@ def sumar(a:int, b:int)->int :
     Returns:
         int: resulado de sumar a y b 
     """
-    pass
+    return a + b
 
 
 # firma de la funcion tiene: como se llama, que recibe, que devuelve --> sumar(a:int, b:int)
 
 #--------------------------------------------------
 
-# pedir dos numeros enteros por consola, sumarlos y mostrar el resulado
+# TAREA: pedir dos numeros enteros por consola, sumarlos y mostrar el resulado
 
 def sumar(a:int, b:int)->int:
     # Tiene que pedir todo desde consola y mostrar desde consola
@@ -29,7 +29,7 @@ def sumar(a:int, b:int)->int:
 
 #--------------------------------------------------
 
-sumar(5,6)
+print(sumar(5,6))
 
 #--------------------------------------------------
 

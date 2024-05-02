@@ -7,10 +7,13 @@ def sumar(a:int, b:int):
         a (int): primer entero a sumar
         b (int): segundo entero a sumar
     """
+    print("El resultado es: ", a + b)
 
 #--------------------------------------------------
 # pedir dos numeros enteros por consola, sumarlos y mostrar el resultado por pantalla
 
-def sumar(a:int, b:int):
-    numeroUno = int(input(("Ingrese el primer numero: ")))
-    numeroDos = int(input(("Ingrese el primer numero: ")))
+
+#--------------------------------------------------
+
+sumar(4,5)
+

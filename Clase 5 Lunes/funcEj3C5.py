@@ -15,4 +15,6 @@ def sumar()->int:
     numeroDos = int(input(("Ingrese el primer numero: ")))
     return numeroUno + numeroDos
 
+#--------------------------------------------------
+
 print(sumar()) # Este es nuestro programa
