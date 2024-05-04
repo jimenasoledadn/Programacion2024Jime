@@ -15,4 +15,3 @@ def resto_division(dividendo: int, divisor: int)->int:
 #---------------------------------------------------------------
 
 print(resto_division(9,2))
-
