@@ -22,7 +22,7 @@
 #       • El nombre y la temática de interés votada por el empleado masculino de mayor
 #           edad.
 
-CANT_ ENCUENTAS = 10
+CANT_ENCUENTAS = 10
 
 for i in range(2):
     nombre = input("ingrese nombre: ")
