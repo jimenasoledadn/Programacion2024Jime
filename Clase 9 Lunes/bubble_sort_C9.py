@@ -9,3 +9,24 @@ for i in range(len(lista) -1):
         print(i,j)
 
     print("-----")
+
+# Ordeno de forma Descendente:
+for i in range(len(lista) - 1):
+    for j in range(i+1, len(lista)):
+        if lista[i] < lista[j]:
+            aux = lista[i]
+            lista[i] = lista[j]
+            lista[j] = aux
+
+print(lista)
+print("---------")
+
+# Ordeno de forma Ascendente:
+for i in range(len(lista) - 1):
+    for j in range(i+1, len(lista)):
+        if lista[i] > lista[j]:
+            aux = lista[i]
+            lista[i] = lista[j]
+            lista[j] = aux
+
+print(lista)

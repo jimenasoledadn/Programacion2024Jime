@@ -79,10 +79,59 @@ def ordenar_lista_descendente(lista:list)->None:
                 lista[j] = aux
 
 def ordenar_lista(lista:list, ascendente:bool = True)->None:
-    if ascendente:
-        print(ordenar_lista_ascendente)
-    else:
-        print(ordenar_lista_descendente)
+         # UNA FORMA
+    # if ascendente:
+    #     for i in range(len(lista) - 1):
+    #         for j in range(i+1, len(lista)):
+    #             if lista[i] > lista[j]: # Ordena de forma ASCENDENTE
+    #                 aux = lista[i]
+    #                 lista[i] = lista[j]
+    #                 lista[j] = aux
+    # else:
+    #     for i in range(len(lista) - 1):
+    #         for j in range(i+1, len(lista)):
+    #             if lista[i] < lista[j]: # Ordena de forma ASCENDENTE
+    #                 aux = lista[i]
+    #                 lista[i] = lista[j]
+    #                 lista[j] = aux
+
+        # OTRA FORMA: 
+    # for i in range(len(lista) - 1):
+    #     for j in range(i+1, len(lista)):
+    #         if ascendente:
+    #             if lista[i] > lista[j]: # Ordena de forma ASCENDENTE
+    #                 aux = lista[i]
+    #                 lista[i] = lista[j]
+    #                 lista[j] = aux
+    #         else:
+    #             if lista[i] < lista[j]: # Ordena de forma ASCENDENTE
+    #                 aux = lista[i]
+    #                 lista[i] = lista[j]
+    #                 lista[j] = aux
+
+        # TERCER FORMA:
+    # for i in range(len(lista) - 1):
+    #     for j in range(i+1, len(lista)):
+    #         if (ascendente and lista[i] > lista[j]) or (not ascendente and lista[i] < lista[j]):
+    #             aux = lista[i]
+    #             lista[i] = lista[j]
+    #             lista[j] = aux
+        
+    # CUARTA FORMA: 
+    for i in range(len(lista) - 1):
+        for j in range(i+1, len(lista)):
+            if lista[i] > lista[j] if ascendente else lista[i] < lista[j]: # Se utiliza un operador ternario
+                aux = lista[i]
+                lista[i] = lista[j]
+                lista[j] = aux
+        # Para corroborar: 
+            # lista = [5,6,4,52,8,14,7,9,5]
+
+            # print(lista)
+            # ordenar_lista(lista)
+            # print(lista)
+            # ordenar_lista(lista, False)
+            # print(lista)
 
 def contar_en_lista(lista:list, target:any)->int: # Cuantas veces esta target en la lista
     contador = 0
@@ -106,7 +155,6 @@ def promediar_lista(lista:list)->float:
         raise ValueError("No esta definido el promedio de una lista vacia")
     raise TypeError("Eso no es una lista")
 
-
 def sorteador(lista:list):
     import time #: Esto es para que tarde un poco antes de resolver la funcion
     from random import randint
@@ -116,4 +164,19 @@ def sorteador(lista:list):
     ganador = lista[randint(0, len(lista)-1)]
     print(ganador)
     # print(f"{lista[randint(0, len(lista)-1)]}")
+
+# Mirar video 11 para saber bien para que es esta funcion: 00:30:00
+def cargar_lista_notas(lista, cantidad):
+    cargar_lista_enteros_random(lista, cantidad, 0, 10)
+
+
+def obtener_lista_promedios(lista_a, lista_b, lista_proms)->None:
+    """Recibe 3 listas, LEE las 2 primeras e indice a indice calcula el promedio y lo guarda en el mismo indice en la lista de proms 
+
+    Args:
+        lista_a (_type_): recibe una lista
+        lista_b (_type_): recibe otra lista
+        lista_proms (_type_): en esta lista guarda el promedio de las dos listas anteriores
+    """ 
+    
 
