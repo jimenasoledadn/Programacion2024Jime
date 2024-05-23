@@ -57,6 +57,10 @@ def cargar_lista_nombres(lista:list, nombres: list, cantidad:int)->None:
     # print("Al final de la funcion: ", id(lista), lista)
     # print("------------------")
 
+def cargar_lista_generos(lista:list, gender: list, cantidad:int)->None:
+    for i in range(cantidad):
+        lista.append(gender[i])
+
 # Los legajos NO se pueden repetir
 def cargar_lista_legajos(lista:list, cantidad:int):
     from random import randint
@@ -90,48 +94,64 @@ def cargar_lista_legajos(lista:list, cantidad:int):
                         # print(x)
 
 
-def cargar_alumnos_random(legs:list, names:list, notas_p1:list, notas_p2:list, promedios:list, cantidad:int):
+def cargar_alumnos_random(legs:list, names:list,genders:list, notas_p1:list, notas_p2:list, promedios:list, cantidad:int):
     cargar_lista_legajos(legs, cantidad)
     cargar_lista_nombres(names, nombres, cantidad)
+    cargar_lista_generos(genders, generos, cantidad)
     cargar_lista_notas(notas_p1, cantidad)
     cargar_lista_notas(notas_p2, cantidad)
     cargar_lista_promedios(notas_p1, notas_p2, promedios)
 
 
-def mostrar_alumnos(legs, names, n1, n2, proms):
+def mostrar_alumnos(legs, names, genders, n1, n2, proms):
     print("        *** Listado de Alumnos ***   ")
-    print(" ----------------------------------------- ")
-    print(" Legajo    Nombre   Nota 1   Nota 2   Promedio ")
-    print(" ----------------------------------------- ")
+    print(" ---------------------------------------------------- ")
+    print(" Legajo    Nombre  Genero  Nota 1   Nota 2   Promedio ")
+    print(" ---------------------------------------------------- ")
     for i in range(len(legs)): # Pongo cualquier proms ya que todas van a tener la misma cantidad de elementos
-        mostrar_alumno(legs[i], names[i], n1[i], n2[i], proms[i])
+        mostrar_alumno(legs[i], names[i], genders[i], n1[i], n2[i], proms[i])
     print()
 
-def mostrar_alumno(legajo:list, nombre:list, n1:list, n2:list, promedio:list):
-    print(f"  {legajo}{nombre:>10}     {n1:^2}       {n2:2}      {promedio:5.2f}") # :5.2f --> 5 es el ancho de columna, el punto referencia a la parte decimal a la derecha, 2 la cantidad decimal que quiero, f especifica que es un flotante
+def mostrar_alumno(legajo:list, nombre:list, genero:list, n1:list, n2:list, promedio:list):
+    print(f"  {legajo}{nombre:>10}     {genero:2}     {n1:^2}      {n2:2}      {promedio:5.2f}") # :5.2f --> 5 es el ancho de columna, el punto referencia a la parte decimal a la derecha, 2 la cantidad decimal que quiero, f especifica que es un flotante
+
+def swap_lista(lista:list, i:int, j:int)->None:
+    aux =lista[i]
+    lista[i] = lista[j]
+    lista[j] = aux
 
 # Para ordenar un dato en particular, si o si hay que ordenar el de todos los items, ya que sino quedarian defasados mezclados un dato con otro de un mismo alumno por ejemplo
-def ordenar_alumnos(legs, names, n1, n2, proms):
+def ordenar_alumnos(legs, names, genders,  n1, n2, proms):
     tam = len(legs) # Hacemos esto para no tener que llamar a la funcion len en todo momento. Directamente lo guardamos en una variable
     for i in range(tam - 1):
         for j in range(i+1, tam ):
             if proms[i] < proms[j]:
-                aux = proms[i]
-                proms[i] = proms[j]
-                proms[j] = aux
+                # aux = proms[i]
+                # proms[i] = proms[j]
+                # proms[j] = aux
 
-                aux = legs[i]
-                legs[i] = legs[j]
-                legs[j] = aux
+                # aux = legs[i]
+                # legs[i] = legs[j]
+                # legs[j] = aux
 
-                aux = n1[i]
-                n1[i] = n1[j]
-                n1[j] = aux
+                # aux = n1[i]
+                # n1[i] = n1[j]
+                # n1[j] = aux
 
-                aux = n2[i]
-                n2[i] = n2[j]
-                n2[j] = aux
+                # aux = n2[i]
+                # n2[i] = n2[j]
+                # n2[j] = aux
 
-                aux = names[i]
-                names[i] = names[j]
-                names[j] = aux
+                # aux = names[i]
+                # names[i] = names[j]
+                # names[j] = aux
+
+                # aux = genders[i]
+                # genders[i] = genders[j]
+                # genders[j] = aux
+                swap_lista(proms, i, j)
+                swap_lista(legs, i, j)
+                swap_lista(genders, i, j)
+                swap_lista(n1, i, j)
+                swap_lista(n2, i, j)
+                swap_lista(names, i, j)

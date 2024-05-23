@@ -6,10 +6,11 @@ from funciones_paralelas_C11 import *
     
     # Ordenajr los alumnos por promedio de mejor a peor
 # ---------------------------------------
-
+TAM = 10
 
 legajos = []
 nombres = []
+generos = []
 notas_p1 = []
 notas_p2 = []
 promedios = []
@@ -23,9 +24,10 @@ promedios = []
 #     notas_p2.append(int(input("Ingrese nota segundo parcial: ")))
 #     promedios.append(calcular_promedio(notas_p1[-1], notas_p2[-1])) # Le paso la ultima nota que agregue para que se agregue al mismo indice de la persona a la que le estoy ingresando los datos
 
-cargar_alumnos_random(legajos, nombres, notas_p1, notas_p2, promedios, 10)
-mostrar_alumnos(legajos, nombres, notas_p1, notas_p2, promedios)
+cargar_alumnos_random(legajos, nombres, generos, notas_p1, notas_p2, promedios, TAM)
 
-ordenar_alumnos(legajos, nombres, notas_p1, notas_p2, promedios)
+mostrar_alumnos(legajos, nombres, generos, notas_p1, notas_p2, promedios)
 
-mostrar_alumnos(legajos, nombres, notas_p1, notas_p2, promedios)
+ordenar_alumnos(legajos, nombres, generos, notas_p1, notas_p2, promedios)
+
+mostrar_alumnos(legajos, nombres, generos, notas_p1, notas_p2, promedios)
