@@ -24,7 +24,7 @@ def factorial(n:int)->int:
 
 # -----------------
 
-numero = -2
+numero = 5
 try:
     print(factorial(numero))
 except ValueError as e:
