@@ -2,12 +2,15 @@ LEGAJO = 0
 NOMBRE = 1
 GENERO = 2
 NOTA_1 = 3
-NOTA_3 = 4
+NOTA_2 = 4
 PROMEDIO = 5
 
 
 def calcular_promedio(a,b)->float:
     return (a+b)/2
+
+
+
 
 def mostrar_alumnos(lista_alumnos: list)->None:
     tam = len(lista_alumnos)
@@ -24,8 +27,21 @@ def mostrar_alumno(unAlumno:list):
 
 
 # --------------------------------------------
+# alumnos = []
+# TAM = 3
 
+# for _ in range(TAM):
+#     alumno = []
 
+#     alumno.append(int(input("Ingrese legajo: ")))
+#     alumno.append((input("Ingrese nombre: ")))
+#     alumno.append((input("Ingrese genero: ")))
+#     alumno.append(int(input("Ingrese nota parcial 1: ")))
+#     alumno.append(int(input("Ingrese nota parcial 2: ")))
+#     alumno.append(calcular_promedio(alumno[3], alumno[4]))
+#     alumno.append(alumno)
+    
+    
 alumnos = [[28787,      "Juan", "m",  3 ,        4 ,      3.50],
         [24862,     "Laura",  "f",   7   ,      4   ,    5.50],
         [23046,     "Pedro" , "m",    6    ,    10    ,   8.00],

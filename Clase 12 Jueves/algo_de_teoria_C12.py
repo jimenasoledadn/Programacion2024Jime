@@ -1,3 +1,6 @@
+# Lo de esta clase esta en diccionario_alumnos
+
+
 # DICCIONARIOS : DICT
 
 

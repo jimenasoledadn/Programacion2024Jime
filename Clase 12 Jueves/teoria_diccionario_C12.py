@@ -24,13 +24,19 @@ print(alumno)
 
 print(id(alumno))
 
-print(alumno.get("localidad")) # retorna el valor de la key si esta en el diccionario
+print(alumno.get("localidad", "No existe ese campo")) # retorna el valor de la key si esta en el diccionario
 print(alumno["localidad"]) # --> aca accedo a traves de [] pero tambien se puede con .get
 
 print(alumno.get("email")) # EN CAMBIO Si NO existe me tira None
 # y a parte me permite si le paso como segundo parametro:
 print(alumno.get("email", "no existe el parametro")) # Es como si tuviera un if adentro del metodo
 print(alumno["email"]) # Si no existe me tira error de key
+
+
+print(alumno.values())
+valores = list(alumno.values())
+print(valores)
+
 
 print(alumno.keys()) # es un metodo, es una forma de verlo como una lista pero NO lo es! 
 
@@ -51,5 +57,10 @@ for key in alumno.values():
     print(key)
 
 # pop remueve el campo que elijo
+print(alumno.pop('legajo'))
+
 
 # popitem REMUEve un campo al azar
+print(alumno.popitem())
+print(alumno.popitem())
+print(alumno)
