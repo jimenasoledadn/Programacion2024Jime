@@ -164,8 +164,10 @@ def filtrar_empleados_sector(lista:list, sector:str)-> list:
             lista_filtrada.append(el)
     return lista_filtrada
 
+
+
 #3
-def promedio_campo_empleado(lista:list, campo:str)->float:
+def promedio_campo_empleados(lista:list, campo:str)->float:
     acumulador = 0
     cantidad = len(lista)
     if cantidad > 0:
@@ -181,17 +183,64 @@ def promedio_edad_empleados(lista:list):
     return promedio_campo_empleado(lista, "edad")
      
 
+# -------------------- FUNCION LAMBDA ----------
+
+# Retorna lo que pide la condicion SIN modificar al elemento
+def filter_empleados(filtradora, lista: list)->list:
+    lista_filtrada = []
+    for el in lista: 
+        if filtradora(el):
+            lista_filtrada.append(el)
+    return lista_filtrada
+
+# ------------------
+
+def promedio_sueldo_empleados(lista:list):
+    return promedio_campo_empleados(lista, "sueldo")
+
+def promedio_edad_empleados(lista:list):
+    return promedio_campo_empleados(lista, "edad")
+
+# Aca si hay una lista de 40 empleados, retorna una lista de la misma cantidad, 40 empleados. Esta funcion recibe un empleado, y hace lo que dice la funcion mapeadora, y lo retorna asi modificado
+def mapear_empleados(mapeadora, lista:list)->list:
+    lista_retorno = []
+
+    for el in lista:
+        x = mapeadora(el) # le pasamos cada empleado a mapeadora
+        lista_retorno.append(x)  # aca va a guardar lo que nos devuelva mapeadora
+        # lista.retorno.append(mapeadora(el)) -> 
+
+    return lista_retorno
+
+# ----------------- FUNCION EACH (cada): -------------
+
+def each_empleado(funcion, lista:list)->None:
+    for el in lista:
+        funcion(el)
 
 
+def ordenar_empleados_lambda(criterio, empleados:list):
+    tam = len(empleados) # Podriamos armar una validacion que si no es ningun campo de los mencionados que tire una exception de tipo ValueError y un msje de campo invalido
+    for i in range(tam - 1):
+        for j in range(i + 1, tam):
+            if criterio(empleados[i], empleados[j]): # criterio va a recibir a 2 empleados
+                swap_lista(empleados, i, j)
 
+def ordenar_lista(criterio, lista:list):
+    tam = len(lista) # Podriamos armar una validacion que si no es ningun campo de los mencionados que tire una exception de tipo ValueError y un msje de campo invalido
+    for i in range(tam - 1):
+        for j in range(i + 1, tam):
+            if criterio(lista[i], lista[j]): # criterio va a recibir a 2 empleados
+                swap_lista(lista, i, j)
 
+#5
+def reduce_lista(funcion, lista:list):
+    ant = lista[0]
+    for i in range(1, len(lista)):
+        ant = funcion(ant, lista[i])
+    return ant
 
-
-
-
-
-
-
-
+def reduce(funcion, lista:list): # 
+    pass
 
 

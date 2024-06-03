@@ -1,7 +1,7 @@
 from funciones_empleados import *
 
 
-TAM = 30
+TAM = 5
 empleados = []
 
 cargar_lista_empleados_random(empleados, TAM)
@@ -50,7 +50,7 @@ mostrar_empleados_nombre_sector(empleados)
 # -------------------------- 2 ---------------------------
 print("-------------- #2 -----------------")
 #2 pedir un sector y mostrar los empleados de ese sector
-sector = input("Ingrese el sector a buscar: ")
+sector = "Sistemas" #input("Ingrese el sector a buscar: ")
 empleados_sector = filtrar_empleados_sector(empleados, sector)
 mostrar_empleados(empleados_sector)
 
@@ -74,7 +74,110 @@ for sector in sectores: # va a hacer cada uno por cada sector
     print(f"Promedio sueldo sector {sector}: ${promedio:.2f}")
     print("------------------------")
 
+# -------------------------- 5 ---------------------------
+print()
+print("-------------- #5 -----------------")
+#5 mostrar el empleado que mas gana y a que sector pertenece
 
+mapeo = mapear_empleados(lambda emp: (emp["legajo"], emp["sueldo"], emp["sector"]), empleados) # me devuelve una tupla con esos campos
+
+
+
+
+
+
+
+
+# ----------- FUNCION LAMBDA -----------
+
+print(" --- Con funcion: --- ")
+
+def filtrar_femenino(emp:dict)->bool:
+    return emp["genero"] == "f"
+def filtrar_sistemas(emp:dict)->bool:
+    return emp["sector"] == "Sistemas"
+
+empleados_filtrados = filter_empleados(filtrar_femenino, empleados)
+mostrar_empleados(empleados_filtrados)
+
+empleados_filtrados = filter_empleados(filtrar_sistemas, empleados)
+mostrar_empleados(empleados_filtrados)
+
+
+print(" --- Con LAMBDA: --- ")
+
+empleados_filtrados = filter_empleados(lambda emp : emp["genero"] == "m", empleados)
+mostrar_empleados(empleados_filtrados)
+empleados_filtrados = filter_empleados(lambda emp : emp["provincia"] == "Mendoza" and emp["genero"] == "f", empleados)
+mostrar_empleados(empleados_filtrados)
+
+# -------------------------------------------------------------
+print("--Mapeadora--")
+
+def email_empleado(empleado:dict)->str: # es EMPLEADO, porque va a llamar a UN solo empleado por vez para sacar lo que se necesita
+    return empleado["email"] # me devuelve el email del empleado
+
+def edad_empleado(empleado:dict)->str:
+    return empleado["edad"]
+
+# -----------------
+print("--Con funcion: --")
+
+emails = mapear_empleados(email_empleado, empleados)
+
+for email in emails:
+    print(email)    
+
+print("--Con LAMBDA: --")
+
+datos = mapear_empleados(lambda emp: emp["legajo"], empleados)
+
+for dato in datos:
+    print(dato)
+
+# ------------
+
+mostrar_empleados(empleados)
+
+# Me esta devolviendo una lista nueva
+def aumentar_sueldo(empleado:dict)->None:
+    # empleado["sueldo"] = empleado["sueldo"] + empleado["sueldo"] * 10/100
+    empleado["sueldo"] *= 1.1
+    # return empleado
+    
+print("Aumento de sueldo: ")
+
+        #por eso lo guardo en una lista nueva, porque modifica la original
+        #  Para usar esta forma: tengo que modificar la funcion aumentar_sueldo -> tiene que retornar un diccionario de un empleado: -> dict: y abajo return empleado:
+                # def aumentar_sueldo(empleado:dict)->dict:
+                    # empleado["sueldo"] = empleado["sueldo"] + empleado["sueldo"] * 10/100 # O asi: empleado["sueldo"] *= 1.1
+                        # return empleado
+                # empleados_nuevo_sueldo = mapear_empleados(aumentar_sueldo, empleados)
+                # mostrar_empleados(empleados_nuevo_sueldo)
+        # NO NECESITO DEVOLVER LA LISTA EN LAS FUNCIONES PARA MODIFICARLAS !!!!
+
+# ----------- EACH --------
+print(" --------------- ")
+each_empleado(aumentar_sueldo, empleados)
+mostrar_empleados(empleados)
+
+# --------------------
+print(" ---- ")
+
+ordenar_empleados_lambda(lambda emp1, emp2: emp1["apellido"] < emp2["apellido"], empleados) # apellidos de la 'z' a la 'a':
+mostrar_empleados(empleados)
+
+print(" ---- ")
+
+ordenar_empleados_lambda(lambda emp1, emp2: len(emp1["apellido"]) < len(emp2["apellido"]), empleados) # apellido del mas largo al mas corto: 
+mostrar_empleados(empleados)
+print(" ---- ")
+
+ordenar_lista(lambda emp1, emp2: len(emp1["nombre"]) < len(emp2["nombre"]), empleados)
+mostrar_empleados(empleados)
+
+
+# --------------------
 
 
 
