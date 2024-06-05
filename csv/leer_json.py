@@ -1,9 +1,15 @@
 import json
-
+from sort_lambda_c17 import *
 
 with open ("./csv/personas.json", "r", encoding="utf-8") as archivo:
     personas = json.load(archivo) # le paso el archivo que tiene que leer.
     print(archivo.closed) # propiedad booleana para saber si el archivo esta cerrado o abierto
+
+
+sort_list(personas, compare_persona)
+
+
+
 
 for persona in personas:
     print(persona)
