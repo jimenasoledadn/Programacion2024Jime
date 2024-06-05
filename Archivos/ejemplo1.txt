@@ -1,0 +1,4 @@
+Hola este archivo esta escrito desde vscode
+Esto es otra linea dentro del archivo
+y esto es otra linea
+esta es la ultima linea del archivo

@@ -1,0 +1,162 @@
+[
+    {
+        "id": 1,
+        "nombre": "ANASTASSIA",
+        "apellido": "Locker",
+        "genero": "Female",
+        "edad": 19,
+        "peso": 88.8
+    },
+    {
+        "id": 2,
+        "nombre": "TONIE",
+        "apellido": "Diprose",
+        "genero": "Female",
+        "edad": 63,
+        "peso": 116.9
+    },
+    {
+        "id": 3,
+        "nombre": "MOREY",
+        "apellido": "Alleyne",
+        "genero": "Male",
+        "edad": 29,
+        "peso": 118.3
+    },
+    {
+        "id": 4,
+        "nombre": "CANDY",
+        "apellido": "Itzchaki",
+        "genero": "Female",
+        "edad": 20,
+        "peso": 91.2
+    },
+    {
+        "id": 5,
+        "nombre": "PRESTON",
+        "apellido": "Petran",
+        "genero": "Male",
+        "edad": 54,
+        "peso": 104.4
+    },
+    {
+        "id": 6,
+        "nombre": "FONS",
+        "apellido": "Raw",
+        "genero": "Male",
+        "edad": 57,
+        "peso": 73.7
+    },
+    {
+        "id": 7,
+        "nombre": "CHRISTA",
+        "apellido": "Garstang",
+        "genero": "Female",
+        "edad": 65,
+        "peso": 74.3
+    },
+    {
+        "id": 8,
+        "nombre": "JILLIAN",
+        "apellido": "Houndsom",
+        "genero": "Female",
+        "edad": 29,
+        "peso": 77.4
+    },
+    {
+        "id": 9,
+        "nombre": "HUMPHREY",
+        "apellido": "Soldi",
+        "genero": "Male",
+        "edad": 38,
+        "peso": 117.1
+    },
+    {
+        "id": 10,
+        "nombre": "OLIVETTE",
+        "apellido": "Bowshire",
+        "genero": "Female",
+        "edad": 47,
+        "peso": 99.9
+    },
+    {
+        "id": 11,
+        "nombre": "COOP",
+        "apellido": "Stanmore",
+        "genero": "Male",
+        "edad": 54,
+        "peso": 73.7
+    },
+    {
+        "id": 12,
+        "nombre": "DARB",
+        "apellido": "Okenden",
+        "genero": "Male",
+        "edad": 35,
+        "peso": 91.9
+    },
+    {
+        "id": 13,
+        "nombre": "FONZIE",
+        "apellido": "Farington",
+        "genero": "Male",
+        "edad": 34,
+        "peso": 51.3
+    },
+    {
+        "id": 14,
+        "nombre": "ARDENE",
+        "apellido": "Brackstone",
+        "genero": "Female",
+        "edad": 60,
+        "peso": 105.0
+    },
+    {
+        "id": 15,
+        "nombre": "QUINTUS",
+        "apellido": "De Maria",
+        "genero": "Male",
+        "edad": 61,
+        "peso": 58.8
+    },
+    {
+        "id": 16,
+        "nombre": "JEFFY",
+        "apellido": "Kunzler",
+        "genero": "Male",
+        "edad": 18,
+        "peso": 84.8
+    },
+    {
+        "id": 17,
+        "nombre": "CATHLEEN",
+        "apellido": "Lope",
+        "genero": "Non-binary",
+        "edad": 27,
+        "peso": 117.5
+    },
+    {
+        "id": 18,
+        "nombre": "BRYANA",
+        "apellido": "Mc Caughan",
+        "genero": "Female",
+        "edad": 29,
+        "peso": 105.6
+    },
+    {
+        "id": 19,
+        "nombre": "GAYEL",
+        "apellido": "Halcro",
+        "genero": "Female",
+        "edad": 19,
+        "peso": 72.6
+    },
+    {
+        "id": 20,
+        "nombre": "KYNTHIA",
+        "apellido": "Parrish",
+        "genero": "Female",
+        "edad": 50,
+        "peso": 81.0
+    }
+]
